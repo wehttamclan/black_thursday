@@ -6,9 +6,8 @@ This is a system that is able to load, parse, search, and execute business intel
 
 The project has two parts; data and analysis.
 
-[Data Access Layer](#data-access-layer)
-
-[Analysis Layer](#data-access-layer)
+* [Data Access Layer](#data-access-layer)
+* [Analysis Layer](#data-access-layer)
 
 ## Analysis Layer
 
