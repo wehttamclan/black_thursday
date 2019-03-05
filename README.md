@@ -21,13 +21,13 @@ se = SalesEngine.from_csv({
 
 The `SalesEngine` instantiated using the CSV files as written above. The below repositories and `SalesAnalyst` are instantiated with the SalesEngine with the following methods:
 
-* `merchants`
-* `items`
-* `invoices`
-* `invoice_items`
-* `transactions`
-* `customers`
-* `analyst`
+`merchants`
+`items`
+`invoices`
+`invoice_items`
+`transactions`
+`customers`
+`analyst`
 
 
 ### `MerchantRepository`
