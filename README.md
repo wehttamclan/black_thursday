@@ -17,13 +17,13 @@ The DAL is built using the SalesEngine class which loads and parses the raw data
 
 The `SalesEngine` is instantiated with the CSV files. The below repositories and `SalesAnalyst` are instantiated with the SalesEngine with the following methods:
 
-* `merchants`
-* `items`
-* `invoices`
-* `invoice_items`
-* `transactions`
-* `customers`
-* `analyst`
+* [`merchants`](#merchantrepository)
+* [`items`](#itemrepository)
+* [`invoices`](#invoicerepository)
+* [`invoice_items`](#invoiceitemrepository)
+* [`transactions`](#transactionrepository)
+* [`customers`](#customerrepository)
+* [`analyst`](#analystrepository)
 
 ```ruby
 SalesEngine.from_csv({
