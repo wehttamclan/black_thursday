@@ -20,3 +20,7 @@ From a technical perspective, this project emphasizes:
 * Relationships between objects
 * Encapsulating Responsibilities
 * Light data / analytics
+
+## Built With
+
+* [Ruby 2.3](https://www.ruby-lang.org/en/)
