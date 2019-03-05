@@ -281,8 +281,6 @@ sa.items_bought_in_year(customer_id, year) #=> [item]
 sa.highest_volume_items(customer_id) #=> [item, item, item]
 ```
 
-Find customers with unpaid invoices:
-
 ```rb
 sa.customers_with_unpaid_invoices #=> [customer, customer, customer]
 ```
