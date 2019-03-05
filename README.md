@@ -4,7 +4,53 @@
 
 This is a system that is able to load, parse, search, and execute business intelligence queries against the data from a typical e-commerece business.
 
+The project has two parts; data and analysis.
+
 [Data Access Layer](#data-access-layer)
+[Analysis Layer](#data-access-layer)
+
+## Analysis Layer
+
+The Analysis Layer execute business intelligence queries against the data.  The SalesAnalyst class is instantiated with the SalesEngine which gives it access to the data repositories.
+
+```ruby
+se = SalesEngine.from_csv({
+  :items     => "./data/items.csv",
+  :merchants => "./data/merchants.csv",
+})
+```
+
+```ruby
+sa = SalesAnalyst.new(se)
+```
+
+### The following methods are available for data analysis
+
+```ruby
+sa.average_items_per_merchant # => 2.88
+```
+
+```ruby
+sa.average_items_per_merchant_standard_deviation # => 3.26
+```
+
+```ruby
+sa.merchants_with_high_item_count # => [merchant, merchant, merchant]
+```
+
+```ruby
+sa.average_item_price_for_merchant(6) # => BigDecimal
+```
+
+```ruby
+sa.average_average_price_per_merchant # => BigDecimal
+```
+
+```ruby
+sa.golden_items # => [<item>, <item>, <item>, <item>]
+```
+
+
 
 ## Data Access Layer
 
