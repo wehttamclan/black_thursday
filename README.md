@@ -7,121 +7,7 @@ This is a system that is able to load, parse, search, and execute business intel
 The project has two parts; data and analysis.
 
 * [Data Access Layer](#data-access-layer)
-* [Analysis Layer](#data-access-layer)
-
-## Analysis Layer
-
-The Analysis Layer execute business intelligence queries against the data.  The SalesAnalyst class is instantiated with the SalesEngine which gives it access to the data repositories.
-
-```ruby
-se = SalesEngine.from_csv({
-  :items     => "./data/items.csv",
-  :merchants => "./data/merchants.csv",
-})
-```
-
-```ruby
-sa = SalesAnalyst.new(se)
-```
-
-### The following methods are available for data analysis
-
-```ruby
-sa.average_items_per_merchant # => 2.88
-```
-
-```ruby
-sa.average_items_per_merchant_standard_deviation # => 3.26
-```
-
-```ruby
-sa.merchants_with_high_item_count # => [merchant, merchant, merchant]
-```
-
-```ruby
-sa.average_item_price_for_merchant(6) # => BigDecimal
-```
-
-```ruby
-sa.average_average_price_per_merchant # => BigDecimal
-```
-
-```ruby
-sa.golden_items # => [<item>, <item>, <item>, <item>]
-```
-
-```ruby
-sa.average_invoices_per_merchant # => 8.5
-sa.average_invoices_per_merchant_standard_deviation # => 1.2
-```
-
-```ruby
-sa.top_merchants_by_invoice_count # => [merchant, merchant, merchant]
-```
-
-```ruby
-sa.bottom_merchants_by_invoice_count # => [merchant, merchant, merchant]
-```
-
-```ruby
-sa.top_days_by_invoice_count # => ["Sunday", "Saturday"]
-```
-
-```ruby
-sa.invoice_status(:pending) # => 5.25
-sa.invoice_status(:shipped) # => 93.75
-sa.invoice_status(:returned) # => 1.00
-```
-
-```ruby
-# invoice.transactions.map(&:result) #=> ["failed", "success"]  
-invoice.is_paid_in_full? #=> true
-
-# invoice.transactions.map(&:result) #=> ["failed", "failed"]  
-invoice.is_paid_in_full? #=> false
-```
-
-```ruby
-sa.top_buyers(x) #=> [customer, customer, customer, customer, customer]
-```
-
-```ruby
-sa.top_buyers #=> [customer * 20]
-```
-
-```ruby
-sa.top_merchant_for_customer(customer_id) #=> merchant
-```
-
-```ruby
-sa.one_time_buyers #=> [customer, customer, customer]
-```
-
-```ruby
-sa.one_time_buyers_top_items #=> [item]
-```
-
-```rb
-sa.items_bought_in_year(customer_id, year) #=> [item]
-```
-
-```rb
-sa.highest_volume_items(customer_id) #=> [item, item, item]
-```
-
-Find customers with unpaid invoices:
-
-```rb
-sa.customers_with_unpaid_invoices #=> [customer, customer, customer]
-```
-
-```rb
-sa.best_invoice_by_revenue #=> invoice
-```
-
-```rb
-sa.best_invoice_by_quantity #=> invoice
-```
+* [Analysis Layer](#analysis-layer)
 
 ## Data Access Layer
 
@@ -295,7 +181,121 @@ From a technical perspective, this project emphasizes:
 * Encapsulating Responsibilities
 * Light data / analytics
 
-### Learning Goals
+## Analysis Layer
+
+The Analysis Layer execute business intelligence queries against the data.  The SalesAnalyst class is instantiated with the SalesEngine which gives it access to the data repositories.
+
+```ruby
+se = SalesEngine.from_csv({
+  :items     => "./data/items.csv",
+  :merchants => "./data/merchants.csv",
+})
+```
+
+```ruby
+sa = SalesAnalyst.new(se)
+```
+
+### The following methods are available for data analysis
+
+```ruby
+sa.average_items_per_merchant # => 2.88
+```
+
+```ruby
+sa.average_items_per_merchant_standard_deviation # => 3.26
+```
+
+```ruby
+sa.merchants_with_high_item_count # => [merchant, merchant, merchant]
+```
+
+```ruby
+sa.average_item_price_for_merchant(6) # => BigDecimal
+```
+
+```ruby
+sa.average_average_price_per_merchant # => BigDecimal
+```
+
+```ruby
+sa.golden_items # => [<item>, <item>, <item>, <item>]
+```
+
+```ruby
+sa.average_invoices_per_merchant # => 8.5
+sa.average_invoices_per_merchant_standard_deviation # => 1.2
+```
+
+```ruby
+sa.top_merchants_by_invoice_count # => [merchant, merchant, merchant]
+```
+
+```ruby
+sa.bottom_merchants_by_invoice_count # => [merchant, merchant, merchant]
+```
+
+```ruby
+sa.top_days_by_invoice_count # => ["Sunday", "Saturday"]
+```
+
+```ruby
+sa.invoice_status(:pending) # => 5.25
+sa.invoice_status(:shipped) # => 93.75
+sa.invoice_status(:returned) # => 1.00
+```
+
+```ruby
+# invoice.transactions.map(&:result) #=> ["failed", "success"]  
+invoice.is_paid_in_full? #=> true
+
+# invoice.transactions.map(&:result) #=> ["failed", "failed"]  
+invoice.is_paid_in_full? #=> false
+```
+
+```ruby
+sa.top_buyers(x) #=> [customer, customer, customer, customer, customer]
+```
+
+```ruby
+sa.top_buyers #=> [customer * 20]
+```
+
+```ruby
+sa.top_merchant_for_customer(customer_id) #=> merchant
+```
+
+```ruby
+sa.one_time_buyers #=> [customer, customer, customer]
+```
+
+```ruby
+sa.one_time_buyers_top_items #=> [item]
+```
+
+```rb
+sa.items_bought_in_year(customer_id, year) #=> [item]
+```
+
+```rb
+sa.highest_volume_items(customer_id) #=> [item, item, item]
+```
+
+Find customers with unpaid invoices:
+
+```rb
+sa.customers_with_unpaid_invoices #=> [customer, customer, customer]
+```
+
+```rb
+sa.best_invoice_by_revenue #=> invoice
+```
+
+```rb
+sa.best_invoice_by_quantity #=> invoice
+```
+
+## Learning Goals
 
 * Use tests to drive both the design and implementation of code
 * Decompose a large application into components
