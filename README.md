@@ -2,6 +2,8 @@
 
 ## Project Overview
 
+This is a system that is able to load, parse, search, and execute business intelligence queries against the data from a typical e-commerece business.
+
 ## Data Access Layer
 
 The DAL is built using the SalesEngine class which loads and parses the raw data from CSV files.
