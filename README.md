@@ -38,9 +38,9 @@ The `MerchantRepository` is responsible for holding and searching our `Merchant`
 * `find_by_name` - returns either `nil` or an instance of `Merchant` having done a *case insensitive* search
 * `find_all_by_name` - returns either `[]` or one or more matches which contain the supplied name fragment, *case insensitive*
 
-#### `Merchant`
+#### The `Merchant` object
 
-An example of a merchant object.
+An example of a merchant instance:
 
 ```ruby
 Merchant.new({
@@ -61,9 +61,7 @@ The `ItemRepository` is responsible for holding and searching our `Item` instanc
 * `find_all_by_price_in_range` - returns either `[]` or instances of `Item` where the supplied price is in the supplied range (a single Ruby `range` instance is passed in)
 * `find_all_by_merchant_id` - returns either `[]` or instances of `Item` where the supplied merchant ID matches that supplied
 
-#### `Item`
-
-An example of an item object:
+#### The `Item` object
 
 ```ruby
 Item.new({
@@ -83,7 +81,7 @@ The `InvoiceRepository` is responsible for holding and searching our `Invoice` i
 * `find_all_by_merchant_id` - returns either `[]` or one or more matches which have a matching merchant ID
 * `find_all_by_status` - returns either `[]` or one or more matches which have a matching status
 
-#### `Invoice`
+#### The `Invoice` object
 
 ```ruby
 Invoice.new({
@@ -105,7 +103,7 @@ The `InvoiceItemRepository` is responsible for holding and searching our `Invoic
 * `find_all_by_item_id` - returns either `[]` or one or more matches which have a matching item ID
 * `find_all_by_invoice_id` - returns either `[]` or one or more matches which have a matching invoice ID
 
-#### `InvoiceItem`
+#### The `InvoiceItem` object
 
 ```ruby
 InvoiceItem.new({
@@ -134,9 +132,7 @@ instances. It offers the following methods:
 * `find_all_by_credit_card_number` - returns either `[]` or one or more matches which have a matching credit card number
 * `find_all_by_result` - returns either `[]` or one or more matches which have a matching status
 
-#### `Transaction`
-
-We create an instance like this:
+#### The `Transaction` object
 
 ```ruby
 Transaction.new({
@@ -159,17 +155,7 @@ The `CustomerRepository` is responsible for holding and searching our `Customers
 * `find_all_by_first_name` - returns either `[]` or one or more matches which have a first name matching the substring fragment supplied
 * `find_all_by_last_name` - returns either `[]` or one or more matches which have a last name matching the substring fragment supplied
 
-#### `Customer`
-
-The customer has the following data accessible:
-
-* `id` - returns the integer id
-* `first_name` - returns the first name
-* `last_name` - returns the last name
-* `created_at` - returns a `Time` instance for the date the customer was first created
-* `updated_at` - returns a `Time` instance for the date the customer was last modified
-
-We create an instance like this:
+#### The `Customer` object
 
 ```ruby
 Customer.new({
