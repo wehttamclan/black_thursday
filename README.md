@@ -23,4 +23,4 @@ From a technical perspective, this project emphasizes:
 
 ## Built With
 
-* [Ruby 2.3](https://www.ruby-lang.org/en/)
+* [Ruby](https://www.ruby-lang.org/en/) (version 2.3)
