@@ -292,13 +292,6 @@ sa.best_invoice_by_revenue #=> invoice
 sa.best_invoice_by_quantity #=> invoice
 ```
 
-## Learning Goals
-
-* Use tests to drive both the design and implementation of code
-* Decompose a large application into components
-* Use test fixtures instead of actual data when testing
-* Connect related objects together through references
-* Learn an agile approach to building software
 
 ## Built With
 
