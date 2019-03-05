@@ -50,7 +50,78 @@ sa.average_average_price_per_merchant # => BigDecimal
 sa.golden_items # => [<item>, <item>, <item>, <item>]
 ```
 
+```ruby
+sa.average_invoices_per_merchant # => 8.5
+sa.average_invoices_per_merchant_standard_deviation # => 1.2
+```
 
+```ruby
+sa.top_merchants_by_invoice_count # => [merchant, merchant, merchant]
+```
+
+```ruby
+sa.bottom_merchants_by_invoice_count # => [merchant, merchant, merchant]
+```
+
+```ruby
+sa.top_days_by_invoice_count # => ["Sunday", "Saturday"]
+```
+
+```ruby
+sa.invoice_status(:pending) # => 5.25
+sa.invoice_status(:shipped) # => 93.75
+sa.invoice_status(:returned) # => 1.00
+```
+
+```ruby
+# invoice.transactions.map(&:result) #=> ["failed", "success"]  
+invoice.is_paid_in_full? #=> true
+
+# invoice.transactions.map(&:result) #=> ["failed", "failed"]  
+invoice.is_paid_in_full? #=> false
+```
+
+```ruby
+sa.top_buyers(x) #=> [customer, customer, customer, customer, customer]
+```
+
+```ruby
+sa.top_buyers #=> [customer * 20]
+```
+
+```ruby
+sa.top_merchant_for_customer(customer_id) #=> merchant
+```
+
+```ruby
+sa.one_time_buyers #=> [customer, customer, customer]
+```
+
+```ruby
+sa.one_time_buyers_top_items #=> [item]
+```
+
+```rb
+sa.items_bought_in_year(customer_id, year) #=> [item]
+```
+
+```rb
+sa.highest_volume_items(customer_id) #=> [item, item, item]
+```
+
+Find customers with unpaid invoices:
+
+```rb
+sa.customers_with_unpaid_invoices #=> [customer, customer, customer]
+```
+
+```rb
+sa.best_invoice_by_revenue #=> invoice
+```
+
+```rb
+sa.best_invoice_by_quantity #=> invoice
+```
 
 ## Data Access Layer
 
