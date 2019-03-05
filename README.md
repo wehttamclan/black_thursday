@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a system that is able to load, parse, search, and execute business intelligence queries against the data from a typical e-commerece business.
+This is a system that is able to load, parse, search, and execute business intelligence queries against the data from a typical e-commerce business.
 
 The project has two parts; data and analysis.
 
